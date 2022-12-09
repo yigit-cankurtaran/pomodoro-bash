@@ -18,6 +18,7 @@ pomodoro_length_sec=$((pomodoro_length * 60))
 
 # Start the timer
 echo "Starting pomodoro for $pomodoro_length minutes..."
+aplay "./alarm.wav"
 for ((i = pomodoro_length_sec; i >= 0; i--)); do
   # Calculate the minutes and seconds remaining
   minutes=$((i / 60))
