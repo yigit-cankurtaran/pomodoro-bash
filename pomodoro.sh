@@ -18,7 +18,7 @@ pomodoro_length_sec=$((pomodoro_length * 60))
 
 # Start the timer
 echo "Starting pomodoro for $pomodoro_length minutes..."
-aplay "./alarm.wav"
+afplay "./alarm.wav"
 for ((i = pomodoro_length_sec; i >= 0; i--)); do
   # Calculate the minutes and seconds remaining
   minutes=$((i / 60))
@@ -58,14 +58,14 @@ while true; do
       # A break just ended
       breaks_taken=$((breaks_taken + 1))
       echo "Break is over. Time to get back to work!"
-      aplay "./alarm.wav"
+      afplay "./alarm.wav"
     else
       # A pomodoro just ended
       pomodoros_completed=$((pomodoros_completed + 1))
       echo "Pomodoro is over. Time for a break!"
       # Play a sound to indicate that the pomodoro is over
       # Replace "sound.mp3" with the path to the desired sound file
-      aplay "./alarm.wav"
+      afplay "./alarm.wav"
     fi
   fi
 done
